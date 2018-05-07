@@ -1,0 +1,20 @@
+server:
+  port: 8090
+auth:
+  server:
+    url: ${OAUTH_URI:http://localhost:9090/oauth/check_token}
+    clientId: trusted-app
+    clientsecret: secret
+    resourceId: resource-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
+
+info:
+  app:
+    name: resource-service
+    description: A Resource Server
